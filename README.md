@@ -1,4 +1,4 @@
-# Juego del ahorcado o hagman
+# Juego del ahorcado o hangman
 
 _Juego del ahorcado o hangman, hecho en python.
 

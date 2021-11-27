@@ -67,19 +67,18 @@ def read():
     return words
 
 
-# paso 1
+
 def start():
     words = read()
     word = random.choice(words).lower().strip()
     print("La palabra secreta es" , word)
     print("La palabra secreta tiene" , len(word), "letras")
     board = ["_" for i in range(0, len(word)) ]
-    # squares = [i**2 for i in range(1, 101) if i % 3 != 0]
     return board, word, []
 
 lives = 10
 
-# paso 2
+
 def show_stage(a):
     error = a
     if error == lives:
@@ -90,8 +89,6 @@ def show_stage(a):
 
 
 
-
-# paso 3    
 def show_board(board, letters_error):
     for space in board:
         print(space, end= ' ')
@@ -102,7 +99,7 @@ def show_board(board, letters_error):
         print()
 
 
-#  paso 4
+
 def get_letter(board, letters_error):
     validate = False
     while not validate:
@@ -117,7 +114,7 @@ def get_letter(board, letters_error):
     return l
 
 
-#  paso 5
+
 def check_letter(l, word, board, letters_error ):
     if l in word:
         print("¡Genial! Has acertado una letra")
@@ -127,13 +124,14 @@ def check_letter(l, word, board, letters_error ):
         letters_error.append(l)
 
 
-#  paso 6
+
 def update_board(l, word, board):
     for i, word_sentence in enumerate(word):
          if l == word_sentence:
             board[i] = l
 
-#  paso 7
+
+
 def check_word(board):
     return '_' not in board
         
@@ -162,6 +160,7 @@ def play():
     show_board(board, letters_error)
 
 
+
 def play_again():
     option = input("Deseas jugar otra vez (precione S para sí o cualquier otra tecla para salir: ")
     if option != 's': 
@@ -170,6 +169,7 @@ def play_again():
         exit()
     else:
         run()
+
 
 
 def run():
